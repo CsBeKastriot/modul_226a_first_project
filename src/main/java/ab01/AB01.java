@@ -1,4 +1,4 @@
-package AB01;
+package ab01;
 
 public class AB01 {
 
