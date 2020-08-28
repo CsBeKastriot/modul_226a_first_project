@@ -1,4 +1,4 @@
-package ab01;
+package Masterind;
 
 import java.util.Scanner;
 import java.util.regex.*;
@@ -13,6 +13,7 @@ public class MastermindAB01 {
         System.out.println("Geben Sie einen Versuchscode mit vier Buchstaben aus der Menge {r,g,b,y,s,w} ein:");
         Scanner scan = new Scanner(System.in);
         String userInput = scan.next();
+        String pattern = "rgbysw";
 
         // Checks userInput to match the following patters.
         // To learn more about regex see the following link: https://www.javatpoint.com/java-regex
@@ -22,7 +23,7 @@ public class MastermindAB01 {
         } else if(Pattern.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)", userInput) || Pattern.matches("\\W+", userInput)) {
             System.out.println("Bitte geben Sie einen der oben erwähnten Buchstaben ein.\n");
             gameStart();
-        } else if(Pattern.matches("[a-z&&[rgbysw]]{1,2}", userInput)) {
+        } else if(Pattern.matches("[a-z&&[rgbysw]]{1,2}", userInput) & userInput.length() == pattern.length()) {
             String gameEnding = "Spiel beendet. Ihr geheimcode war " + userInput+ ". Anzahl versuche: 5";
             System.out.println(gameEnding);
         }
