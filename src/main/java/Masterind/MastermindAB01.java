@@ -23,7 +23,7 @@ public class MastermindAB01 {
         } else if(Pattern.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)", userInput) || Pattern.matches("\\W+", userInput)) {
             System.out.println("Bitte geben Sie einen der oben erwähnten Buchstaben ein.\n");
             gameStart();
-        } else if(Pattern.matches("[a-z&&[rgbysw]]{1,2}", userInput) & userInput.length() == pattern.length()) {
+        } else if(Pattern.matches("[a-z&&[^rgbysw]]{1,2}", userInput) & userInput.length() == pattern.length()) {
             String gameEnding = "Spiel beendet. Ihr geheimcode war " + userInput+ ". Anzahl versuche: 5";
             System.out.println(gameEnding);
         }
